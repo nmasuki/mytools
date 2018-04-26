@@ -1,0 +1,18 @@
+{
+  "Shortcode": "702421",
+  "Shortcode1": "600332",
+  "InitiatorName": "apitest361",
+  "SecurityCredential": "361reset",
+  "Shortcode2": "600000",
+  "TestMSISDN": "254708374149",
+  "LNM_Shortcode": "174379",
+  "LNM_PassKey": "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
+  "ConfirmationURL": "http://awesome-store.co.ke/ipn",
+  "ValidationURL": "http://awesome-store.co.ke/ipn",
+  "AccessToken": {
+    "access_token": "KsHkOe6PH5KR0f47MQnxFpGLvmQ4",
+    "expires_in": 3599,
+    "expiry": 1509645558559,
+    "expiryDate": "2017-11-02T17:59:18.559Z"
+  }
+}
