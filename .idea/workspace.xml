@@ -4,26 +4,10 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a63dabc4-c85c-48ec-b35c-35fed4fe051d" name="Default" comment="remove products with &quot;offers&quot; as the only category..">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/androidres.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/AppSync.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/helpers/crawler_url_hundeler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/phone/ValidateNumber.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/drink.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/quantity.js" />
+    <list default="true" id="a63dabc4-c85c-48ec-b35c-35fed4fe051d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Debug.log" afterPath="$PROJECT_DIR$/Debug.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cbuser/app.js" afterPath="$PROJECT_DIR$/cbuser/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createdialadrinkJSON.js" afterPath="$PROJECT_DIR$/createdialadrinkJSON.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Crawler.js" afterPath="$PROJECT_DIR$/lib/Crawler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/common/HTTPClient.js" afterPath="$PROJECT_DIR$/lib/common/HTTPClient.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/common/MongoRepo.js" afterPath="$PROJECT_DIR$/lib/common/MongoRepo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/common/polyfills.js" afterPath="$PROJECT_DIR$/lib/common/polyfills.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/helpers/pushbullet_msghandler.js" afterPath="$PROJECT_DIR$/lib/helpers/pushbullet_msghandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/money/Mpesa.js" afterPath="$PROJECT_DIR$/lib/money/Mpesa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/phone/Phonebook.js" afterPath="$PROJECT_DIR$/lib/phone/Phonebook.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/phone/PushBullet.js" afterPath="$PROJECT_DIR$/lib/phone/PushBullet.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,15 +59,15 @@
       <file leaf-file-name="MongoRepo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/common/MongoRepo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="34" />
+            <state relative-caret-position="520">
+              <caret line="130" column="46" lean-forward="false" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
               <folding>
                 <element signature="n#!!block;n#cleanMongoObject#0;n#!!block;n#MongoRepo#0" expanded="false" />
                 <element signature="e#1199#1566#0" expanded="false" />
                 <element signature="e#2142#2215#0" expanded="false" />
                 <element signature="e#3192#3570#0" expanded="false" />
                 <element signature="e#3611#3833#0" expanded="false" />
-                <element signature="e#4293#4333#0" expanded="false" />
+                <element signature="e#4320#4360#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -171,7 +155,7 @@
         <entry file="file://$PROJECT_DIR$/lib/phone/WhatsApp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -322,13 +306,14 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/bot/node_modules" />
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2009" />
+    <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="2018" />
-    <option name="height" value="1143" />
+    <option name="width" value="1938" />
+    <option name="height" value="1064" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -602,12 +587,20 @@
       <workItem from="1525078752669" duration="1130000" />
       <workItem from="1525337525382" duration="7954000" />
       <workItem from="1525346014594" duration="27113000" />
-      <workItem from="1525455808115" duration="2551000" />
+      <workItem from="1525455808115" duration="2931000" />
     </task>
+    <task id="LOCAL-00001" summary="Few updates..&#10;added package.json">
+      <created>1525458420010</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525458420010</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="776387000" />
+    <option name="totallyTimeSpent" value="776767000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -619,19 +612,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2009" y="-9" width="2018" height="1143" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1064" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18589084" sideWeight="0.6926554" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19387755" sideWeight="0.6926554" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38598442" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.71063393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7096774" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34705228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31256714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4212679" sideWeight="0.63641244" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19387755" sideWeight="0.30734465" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303681" sideWeight="0.8082707" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2914349" sideWeight="0.8082707" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -670,7 +663,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove products with &quot;offers&quot; as the only category.." />
-    <option name="LAST_COMMIT_MESSAGE" value="remove products with &quot;offers&quot; as the only category.." />
+    <MESSAGE value="Few updates..&#10;added package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Few updates..&#10;added package.json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -729,12 +723,6 @@
           <url>file://$PROJECT_DIR$/models/drink.model.js</url>
           <line>46</line>
           <option name="timeStamp" value="1374" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/lib/common/MongoRepo.js</url>
-          <line>128</line>
-          <properties />
-          <option name="timeStamp" value="1376" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1135,7 +1123,7 @@
     <entry file="file://$PROJECT_DIR$/lib/phone/WhatsApp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1150,15 +1138,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/MongoRepo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="34" />
+        <state relative-caret-position="520">
+          <caret line="130" column="46" lean-forward="false" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
           <folding>
             <element signature="n#!!block;n#cleanMongoObject#0;n#!!block;n#MongoRepo#0" expanded="false" />
             <element signature="e#1199#1566#0" expanded="false" />
             <element signature="e#2142#2215#0" expanded="false" />
             <element signature="e#3192#3570#0" expanded="false" />
             <element signature="e#3611#3833#0" expanded="false" />
-            <element signature="e#4293#4333#0" expanded="false" />
+            <element signature="e#4320#4360#0" expanded="false" />
           </folding>
         </state>
       </provider>
