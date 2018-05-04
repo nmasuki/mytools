@@ -1,9 +1,7 @@
-var args = [];
+global.args = [];
 const libs = require("./lib");
 const readline = require("readline");
 const defaultLib = Object.keys(libs).find(l => l.toLowerCase().trim() == 'eular');
-
-//Allow navigation
 global.rl = readline.createInterface(process.stdin, process.stdout, null);
 
 function runAction(_action, _args) {
@@ -33,13 +31,16 @@ function selectAction(_action) {
 
 function getArguments(line, index) {
     line = '"' + (line || "").trim("\"") + '"'
-    var args = [], key = "";
+    var args = [], key = "", argsObj = {};
     var parts = line.trim().splitArgs().filter(p => p);
     var _actionName, _libName;
     for (var i = (index || 0); i < parts.length; i++) {
         var value = parts[i];
         if (value) {
-            if (key) {
+            if (value.startsWith("-")) {
+                key = value.substr(1);
+                argsObj[key[0]] = true;
+            } else if (key) {
                 if (['a', 'action'].contains(key))
                     _actionName = value;
                 else if (['l', 'lib'].contains(key))
@@ -51,8 +52,6 @@ function getArguments(line, index) {
                 }
 
                 key = null;
-            } else if (value.startsWith("-")) {
-                key = value.substr(1);
             } else {
                 args.push(value);
             }
@@ -66,12 +65,12 @@ function getArguments(line, index) {
     }
 
     if (_actionName)
-        args.actionName = _actionName;
+        argsObj.actionName = _actionName;
 
     if (_libName)
-        args.libName = _libName;
+        argsObj.libName = _libName;
 
-    return Object.assign({}, args);
+    return Object.assign(argsObj, args);
 }
 
 if (process.argv.length) {
@@ -85,7 +84,6 @@ if (process.argv.length) {
 
     if (!console.args)
         console.args = Object.keys(args).filter(k => !isNaN(k)).map(k => args[k]);
-    ;
 
     /*
      if (!console.libName)
@@ -108,41 +106,43 @@ if (process.argv.length) {
     }
 }
 
-rl.on("line", function bye(line) {
-    line = (line || "").toString().trim();
-    if (line && !console.asking) {
-        var actionKeys = console.lib ? Object.keys(console.lib).filter(k => typeof console.lib[k] == "function").sort() : [];
-        var libKeys = (libs ? Object.keys(libs) : []);
-        if (["bye", "exit"].contains(line)) {
-            rl.close();
-            process.exit();
-        } else if (["?", "/?"].contains(line)) {
-            if (console.lib)
-                console.log(`Available actions! [${actionKeys.join(', ')}]`);
-            else
-                console.log(`Available libs! [${Object.keys(libs).join(', ')}]`);
+//Allow navigation
+if (!args.s) {
+    rl.on("line", function bye(line) {
+        line = (line || "").toString().trim();
+        if (line && !console.asking) {
+            var actionKeys = console.lib ? Object.keys(console.lib).filter(k => typeof console.lib[k] == "function").sort() : [];
+            var libKeys = (libs ? Object.keys(libs) : []);
+            if (["bye", "exit"].contains(line)) {
+                rl.close();
+                process.exit();
+            } else if (["?", "/?"].contains(line)) {
+                if (console.lib)
+                    console.log(`Available actions! [${actionKeys.join(', ')}]`);
+                else
+                    console.log(`Available libs! [${Object.keys(libs).join(', ')}]`);
+            } else {
+                var parts = line.splitArgs().filter(p => p);
+                var fnmatch = (l => l.toLowerCase().trim() == parts.first().toLowerCase().trim());
+                if (parts && !parts.length)
+                    console.log(`Invalid input '${line}'!`);
+                else if (libKeys.contains(fnmatch)) {
+                    var libName = libKeys.find(fnmatch);
+                    console.log(`Selecting lib '${parts.first()}'.`);
+                    console.libName = libName;
+                }
+                else if (actionKeys.contains(fnmatch)) {
+                    var actionName = actionKeys.find(fnmatch);
+                    console.actionName = actionName;
+                    console.log(`Running action '${parts.first()}'.`);
+                    runAction(parts[0], parts.slice(1));
+                }
+                else {
+                    console.log(`Could not find action: '${parts.first()}' in lib '${console.libName}'`);
+                }
+            }
         } else {
-            var parts = line.splitArgs().filter(p => p);
-            var fnmatch = (l => l.toLowerCase().trim() == parts.first().toLowerCase().trim());
-            if (parts && !parts.length)
-                console.log(`Invalid input '${line}'!`);
-            else if (libKeys.contains(fnmatch)) {
-                var libName = libKeys.find(fnmatch);
-                console.log(`Selecting lib '${parts.first()}'.`);
-                console.libName = libName;
-            }
-            else if (actionKeys.contains(fnmatch)) {
-                var actionName = actionKeys.find(fnmatch);
-                console.actionName = actionName;
-                console.log(`Running action '${parts.first()}'.`);
-                runAction(parts[0], parts.slice(1));
-            }
-            else {
-                console.log(`Could not find action: '${parts.first()}' in lib '${console.libName}'`);
-            }
+            console.log(line);
         }
-    } else {
-        console.log(line);
-    }
-});
-
+    });
+}
