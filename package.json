@@ -1,0 +1,27 @@
+{
+  "name": "mytools",
+  "version": "1.0.0",
+  "description": "My Handy tools",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nmasuki",
+  "license": "ISC",
+  "dependencies": {
+    "couchbase": "^2.4.6",
+    "crawler": "^1.1.2",
+    "csv": "^3.0.2",
+    "gravatar": "^1.6.0",
+    "json2csv": "^4.1.2",
+    "mongodb": "^3.0.7",
+    "mongoose": "^5.0.17",
+    "najax": "^1.0.3",
+    "readline": "^1.3.0",
+    "ws": "^5.1.1",
+    "xml2js": "^0.4.19"
+  }
+}

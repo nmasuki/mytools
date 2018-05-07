@@ -39,7 +39,7 @@ var host = "159.65.50.86";//"localhost";//
 var database = "dialadrink";
 var repo = new MongoRepo("dialadrink", "search");
 
-if(!useSyncGateway) {
+if (!useSyncGateway) {
     var cluster = new couchbase.Cluster(`http://${host}:8091?detailed_errcodes=1`);
     cluster.authenticate('admin', 'admin@Mai');
     var bucket = cluster.openBucket('dialadrink', function (err) {
@@ -119,9 +119,9 @@ function save(_id, _rev, data) {
         if (diffArr.length == 0) {
             console.log("No changes detected on " + _id);
             return;
-        }else if(row){
+        } else if (row) {
             var changes = `${_id}:\r\n`;
-            for(var i in diff)
+            for (var i in diff)
                 changes += `\t-${i}: ${diff[i][0]}->${diff[i][1]}\r\n`;
 
             console.log(changes);
@@ -149,7 +149,7 @@ function save(_id, _rev, data) {
                 });
             }
         } else {
-            doc._rev = cas || idRevs[_id] || (row||{})._rev;
+            doc._rev = cas || idRevs[_id] || (row || {})._rev;
             najax.put({
                 url: `http://${host}:4985/${database}/` + _id,
                 contentType: "application/json",
@@ -167,7 +167,7 @@ function save(_id, _rev, data) {
                     "User-Agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
                 },
                 success: function (data) {
-                    idRevs[_id] = data._rev ||  data.rev || data.Rev;
+                    idRevs[_id] = data._rev || data.rev || data.Rev;
                     console.log(`Saved '${doc.name}', '${data.id}', '${idRevs[_id]}'!`)
                 },
                 error: function (xhr, status, err) {
@@ -189,28 +189,26 @@ function fillIn(row, data) {
     var _id = "product-" + (row.url || data.page).toLowerCase().replace(/[\W]+/g, '-').trim('-');
 
     row = row || {};
-    if (data.description)
-        row.description = data.description;
 
     if (row.category == "offer")
-        row.category = data.category;
+        data.category = data.category;
 
     if (row.subcategory == "offer")
-        row.subcategory = data.subcategory;
+        data.subcategory = data.subcategory;
+
+    if (row.subcategory && row.subcategory.toLowerCase() == "image")
+        data.subcategory = undefined;
 
     if (row.categories && row.categories.length)
-        row.category = row.categories.first(c => c && !c.startsWith("offer"));
+        data.category = row.categories.first(c => c && !c.startsWith("offer"));
 
-    row.options = (row.options || []).concat(data.options);
-
-    var _data = Object.assign(data, row);
-    _data.options = row.options.filter(o => !!o)
+    data.options = (row.options || []).concat(data.options).filter(o => !!o)
         .orderByDescending(o => o && o.name)
         .distinctBy(o => parseFloat("0" + o && o.price));
 
+    var _data = Object.assign(row, data);
     save(_id, row._rev, _data);
-    if (_data.category != "offer")
-        fillDescription(_id, _data);
+    fillDescription(_id, _data);
 }
 
 function fillDescription(_id, _data) {
@@ -228,7 +226,7 @@ function fillDescription(_id, _data) {
             }
 
             var items;
-            var exempts = ["dialadrink", "price", "buy", "deliver", "cart", "website", "site", "sale", "page", "under the age", "i have", "jumia", "shopping", "likes", "1, 2, 3"]
+            var exempts = ["£", "$", "dialadrink", "price", "buy", "pay", "deliver", "cart", "website", "site", "sale", "page", "under the age", "i have", "jumia", "shopping", "likes", "comment", "1, 2, 3"]
             if (data && data.webPages && data.webPages.value[0]) {
                 items = data.webPages.value.filter(function (i) {
                     return !!i.snippet && i.snippet.toLowerCase().contains(_data.name.toLowerCase());

@@ -32,23 +32,25 @@ var protectedBearer = [authChecker, fetchUserObject]
 var protectedBasic = [authChecker, fetchUserObject]
 var unprotected = [];
 
-app.use('/signup', unprotected, bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/signup', bodyParser.json());
 
 // Sign up
 app.post('/signup', protectedBearer, function (req, res) {
     var json = req.body;
+    var signupUrl = `http://${host}/${db}/_user/`;
 
-
-    console.log('Its signup time');
+    console.log('Its signup time', signupUrl, json);
 
     var options = {
-        url: `http://${host}/${db}/_user/`,
+        url: signupUrl,
         method: 'POST',
         body: json
     };
 
     request(options, function (error, response) {
-        res.writeHead(response.statusCode);
+        //res.writeHead(response.statusCode);
+        res.send(response.body);
         res.end();
     });
 });
