@@ -17,6 +17,7 @@
     "csv": "^3.0.2",
     "gravatar": "^1.6.0",
     "json2csv": "^4.1.2",
+    "md5": "^2.2.1",
     "messagebird": "^2.1.4",
     "mongodb": "^3.0.7",
     "mongoose": "^5.0.17",

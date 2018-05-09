@@ -5,7 +5,7 @@ const couchbase = require("couchbase");
 const najax = require('najax');
 const crypto = require('crypto');
 
-var useSyncGateway = true;
+var useSyncGateway = false;
 var googleKeyUsage = {
     _id: "Google:" + new Date().addHours(-10 + 3).toISOString().substr(0, 10),
     dailyLimit: 100,
@@ -138,14 +138,14 @@ function save(_id, _rev, data) {
                     if (err)
                         console.warn("Error while upserting data!", err);
                     else
-                        console.log(`Upserted '${doc.name}', '${data._id}', '${res.cas}'!`)
+                        console.log(`Upserted '${doc.name}', '${_id}', '${res.cas}'!`)
                 });
             } else {
                 bucket.insert(_id, doc, function (err, res) {
                     if (err)
                         console.warn("Error while inserting data!", err);
                     else
-                        console.log(`Inserted '${doc.name}', '${data._id}', '${res.cas}'!`)
+                        console.log(`Inserted '${doc.name}', '${_id}', '${res.cas}'!`)
                 });
             }
         } else {
