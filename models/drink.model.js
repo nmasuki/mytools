@@ -186,7 +186,7 @@ function save(_id, _rev, data) {
 }
 
 function fillIn(row, data) {
-    var _id = "product-" + (row.url || data.page || data.name).toLowerCase().replace(/[\W]+/g, '-').trim('-');
+    var _id = "product-" + ((row.url || data.page || "").trim() || data.name).toLowerCase().replace(/[\W]+/g, '-').trim('-');
 
     row = row || {};
 
