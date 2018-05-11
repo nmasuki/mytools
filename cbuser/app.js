@@ -34,6 +34,7 @@ var unprotected = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/signup', bodyParser.json());
+app.use('/order', bodyParser.json());
 
 // Sign up
 app.post('/signup', protectedBearer, function (req, res) {
@@ -53,6 +54,14 @@ app.post('/signup', protectedBearer, function (req, res) {
         res.send(response.body);
         res.end();
     });
+});
+
+// Order
+app.post('/order', protectedBearer, function (req, res) {
+    var json = req.body;
+    var signupUrl = `http://${host}/${db}/_user/`;
+
+
 });
 
 // All other requests. Disable in prod
