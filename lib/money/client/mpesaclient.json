@@ -1,5 +1,5 @@
 {
-    "Shortcode": "702421",
+    "ENV": "sandbox",
     "Shortcode1": "600332",
     "InitiatorName": "testapi0332",
     "SecurityCredential": "Safaricom332!",
@@ -7,13 +7,8 @@
     "TestMSISDN": "254708374149",
     "LNM_Shortcode": "174379",
     "LNM_PassKey": "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
-    "ConfirmationURL": "http://awesome-store.co.ke/ipn",
-    "ValidationURL": "http://awesome-store.co.ke/ipn",
-    "AccessToken": {
-        "status": "success",
-        "access_token": "okvMG8BjW0zqWG5iMOixY4hny9vX",
-        "expires_in": "3599",
-        "expiryDate": "2017-11-10T19:21:12.651Z",
-        "expiry": 1510341672651
-    }
+    "ResultURL": "http://159.65.50.86:3000/mpesa/result",
+    "ConfirmationURL": "http://159.65.50.86:3000/mpesa/confirmation",
+    "ValidationURL": "http://159.65.50.86:3000/mpesa/validation",
+    "QueueTimeOutURL": "http://159.65.50.86:3000/mpesa/timeout"
 }

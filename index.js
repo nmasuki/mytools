@@ -2,7 +2,6 @@ global.args = [];
 const libs = require("./lib");
 const readline = require("readline");
 const defaultLib = Object.keys(libs).find(l => l.toLowerCase().trim() == 'eular');
-global.rl = readline.createInterface(process.stdin, process.stdout, null);
 
 function runAction(_action, _args) {
     if (console.lib) {
@@ -108,13 +107,14 @@ if (process.argv.length) {
 
 //Allow navigation
 if (!args.s) {
-    rl.on("line", function bye(line) {
+    global.rl = readline.createInterface(process.stdin, process.stdout, null);
+    if (rl) rl.on("line", function bye(line) {
         line = (line || "").toString().trim();
         if (line && !console.asking) {
             var actionKeys = console.lib ? Object.keys(console.lib).filter(k => typeof console.lib[k] == "function").sort() : [];
             var libKeys = (libs ? Object.keys(libs) : []);
             if (["bye", "exit"].contains(line)) {
-                rl.close();
+                if (rl) rl.close();
                 process.exit();
             } else if (["?", "/?"].contains(line)) {
                 if (console.lib)
@@ -130,14 +130,12 @@ if (!args.s) {
                     var libName = libKeys.find(fnmatch);
                     console.log(`Selecting lib '${parts.first()}'.`);
                     console.libName = libName;
-                }
-                else if (actionKeys.contains(fnmatch)) {
+                } else if (actionKeys.contains(fnmatch)) {
                     var actionName = actionKeys.find(fnmatch);
                     console.actionName = actionName;
                     console.log(`Running action '${parts.first()}'.`);
                     runAction(parts[0], parts.slice(1));
-                }
-                else {
+                } else {
                     console.log(`Could not find action: '${parts.first()}' in lib '${console.libName}'`);
                 }
             }
