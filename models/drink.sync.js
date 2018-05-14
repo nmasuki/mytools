@@ -217,8 +217,11 @@ sync.fillIn = function fillIn(row, data) {
 sync.fillDescription = function fillDescription(_id, _data) {
     var name = _data.name.replace(/[\W]+/g, ' ').replace(/\ss\s/, "s ");
     var cat = _data.category && !_data.category.startsWith("offer") ? _data.category : "";
+
     if (!cat.startsWith("offer") && !name.toLowerCase().contains(cat.toLowerCase()))
         name += ` ${cat}`;
+    if(_data.subcategory)
+        name += ` ${_data.subcategory}`;
 
     var hasDescription = false;//!!_data.description;
     if (!hasDescription) {
