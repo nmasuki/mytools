@@ -2,11 +2,13 @@ var express = require('express')
     , bodyParser = require('body-parser')
     , prettyjson = require('prettyjson');
 
+
 var request = require('request').defaults({json: true})
     , httpProxy = require('http-proxy')
     , host = "127.0.0.1:4985"
     , db = "dialadrink"
     , app = express();
+const MongoRepo = require('./../common/MongoRepo');
 
 function authChecker(req, res, next) {
     if (req.headers.authorization || req.path === '/auth') {
@@ -66,11 +68,16 @@ app.post('/signup', protectedBearer, function (req, res) {
 
 // Order
 app.post('/order', protectedBasic, function (req, res) {
+    var repo = new MongoRepo.call("drinks", "orders");
+
     var money = new require("../lib/money")
     var order = req.body,
         paymentMethod = order.paymentMethod;
 
+    order.status = "created";
+    order.paymentData = order.paymentData || [];
     paymentMethod.metaData = paymentMethod.metaData || {};
+
     switch (paymentMethod.name) {
         case "Cash On Delivery":
             res.send({
@@ -79,42 +86,51 @@ app.post('/order', protectedBasic, function (req, res) {
             });
             break;
         case "M-Pesa":
-            var mpesa = new money.Mpesa(),
-                phoneNumber = order.metaData["payment-identifier"],
-                shortCode = paymentMethod.metaData.shortcode || '600784',
-                account = paymentMethod.metaData.account || order.metaData["payment-fullNames"],
-                desc = "ORDER " + order.orderNumber;
-
-            mpesa.lipaNaMpesaOnline(shortCode, phoneNumber, account, order.itemsCost, desc)
+            var mpesa = new money.Mpesa();
+            mpesa.lipaNaMpesaOnline(order)
                 .then((data) => {
-                    var body = Object.assign({status: "success"}, data);
+                    var body = Object.assign({status: "success", type:"Mpesa-Response"}, data);
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
+
+                    order.paymentData.push(body);
+                    repo.save(order);
+
                     res.send(body);
                 });
+            order.status = "request_sent";
             break;
         case "Paypal":
             var paypal = new money.Paypal();
             paypal.requestPayment(order)
                 .then((data)=>{
-                    var body = Object.assign({status: "success"}, data);
+                    var body = Object.assign({status: "success", type:"Paypal-Response"}, data);
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
+
+                    order.paymentData.push(body);
+                    repo.save(order);
+
                     res.send(body);
                 });
+            order.status = "request_sent";
             break;
         case "Mock":
             res.send({
                 status: 'success',
                 message: "This is a mocked successful order. Please continue testing our App."
             });
-            break;
+            return;
         default:
             res.sendStatus(501);
             res.send({
                 status: 'failed',
                 message: `The payment method '${order.paymentMethod.name}' is not yet implemented! Please try another one.`
             });
-            break
+            return;
     }
+
+    order.orderType = paymentMethod.name;
+
+    repo.save(order);
 });
 
 require('./routes/payment')(app);
