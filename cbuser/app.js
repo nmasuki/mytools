@@ -68,7 +68,7 @@ app.post('/signup', protectedBearer, function (req, res) {
 
 // Order
 app.post('/order', protectedBasic, function (req, res) {
-    var repo = new MongoRepo.call("drinks", "orders");
+    var repo = new MongoRepo("drinks", "orders");
 
     var money = new require("../lib/money")
     var order = req.body,
