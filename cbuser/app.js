@@ -8,7 +8,7 @@ var request = require('request').defaults({json: true})
     , host = "127.0.0.1:4985"
     , db = "dialadrink"
     , app = express();
-const MongoRepo = require('./../common/MongoRepo');
+const MongoRepo = require('../lib/common/MongoRepo');
 
 function authChecker(req, res, next) {
     if (req.headers.authorization || req.path === '/auth') {
@@ -139,5 +139,5 @@ var server = app.listen(3000, function () {
     var host = server.address().address;
     var port = server.address().port;
 
-    console.log('App listening at http://%s:%s', host, port);
+    console.log(`App listening at http://${host}:${port}`);
 });

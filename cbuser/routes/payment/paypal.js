@@ -2,10 +2,11 @@
  * Paypal callbacks
  */
 
-require("../common/polyfills");
+require("../../../lib/common/polyfills");
 const express = require('express');
 const router = express.Router();
-const paypal = new require('./client/index').PayPalClient();
+const MoneyClients = require('../../../lib/money/index');
+const paypal = new MoneyClients.Paypal();
 
 // return_url
 router.get('/result', function(req, res) {
