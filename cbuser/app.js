@@ -84,6 +84,8 @@ app.post('/order', protectedBasic, function (req, res) {
                 status: 'success',
                 message: paymentMethod.metaData.successMsg || "Thanks for placing your order. Your deliver will soon be dispatched"
             });
+            order.status = "on_delivery";
+
             break;
         case "M-Pesa":
             var mpesa = new money.Mpesa();
@@ -93,11 +95,11 @@ app.post('/order', protectedBasic, function (req, res) {
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
 
                     order.paymentData.push(body);
+                    order.status = "request_sent";
                     repo.save(order);
 
                     res.send(body);
                 });
-            order.status = "request_sent";
             break;
         case "Paypal":
             var paypal = new money.Paypal();
@@ -107,11 +109,11 @@ app.post('/order', protectedBasic, function (req, res) {
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
 
                     order.paymentData.push(body);
+                    order.status = "request_sent";
                     repo.save(order);
 
                     res.send(body);
                 });
-            order.status = "request_sent";
             break;
         case "Mock":
             res.send({
@@ -129,7 +131,6 @@ app.post('/order', protectedBasic, function (req, res) {
     }
 
     order.orderType = paymentMethod.name;
-
     repo.save(order);
 });
 
