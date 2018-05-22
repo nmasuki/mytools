@@ -8,8 +8,8 @@ var router = express.Router();
 
 // B2C/C2B ResultURL - /api/v1/result
 router.post('/result', function (req, res) {
-    console.log('-----------B2C CALLBACK------------');
-    console.log(prettyjson.render(req.body, {noColor: true}));
+    console.log('-----------B2C RESULTS------------');
+    console.log(req.body);
     console.log('-----------------------');
 
     var message = {
@@ -23,7 +23,7 @@ router.post('/result', function (req, res) {
 // B2C/C2B QueueTimeoutURL - /api/v1/timeout
 router.post('/timeout', function (req, res) {
     console.log('-----------B2C TIMEOUT------------');
-    console.log(prettyjson.render(req.body, {noColor: true}));
+    console.log(req.body);
     console.log('-----------------------');
 
     var message = {
@@ -37,7 +37,7 @@ router.post('/timeout', function (req, res) {
 // C2B ValidationURL - /api/v1/validation
 router.post('/validation', function (req, res) {
     console.log('-----------C2B VALIDATION REQUEST-----------');
-    console.log(prettyjson.render(req.body, {noColor: true}));
+    console.log(req.body);
     console.log('-----------------------');
 
     var message = {
@@ -52,7 +52,7 @@ router.post('/validation', function (req, res) {
 // C2B ConfirmationURL - /api/v1/confirmation
 router.post('/confirmation', function (req, res) {
     console.log('-----------C2B CONFIRMATION REQUEST------------');
-    console.log(prettyjson.render(req.body, {noColor: true}));
+    console.log(req.body);
     console.log('-----------------------');
 
     var message = {
