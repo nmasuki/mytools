@@ -1,9 +1,15 @@
 var bodyParser = require('body-parser');
 
 module.exports = function (app) {
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use('/paypal', [
+        bodyParser.json(),
+        bodyParser.urlencoded({ extended: true }),
+        require('./payment/paypal')
+    ]);
 
-    app.use('/paypal', require('./payment/paypal'));
-    app.use('/mpesa', require('./payment/mpesa'));
+    app.use('/mpesa', [
+        bodyParser.json(),
+        bodyParser.urlencoded({ extended: true }),
+        require('./payment/mpesa')
+    ]);
 };
