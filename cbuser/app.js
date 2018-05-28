@@ -91,27 +91,29 @@ app.post('/order', protectedBasic, function (req, res) {
             var mpesa = new money.Mpesa();
             mpesa.lipaNaMpesaOnline(order)
                 .then((data) => {
-                    var body = Object.assign({status: "success", type:"Mpesa-Response"}, data);
+                    var body = Object.assign({status: "success", type: "Mpesa-Response"}, data);
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
 
                     order.paymentData.push(body);
                     order.status = "request_sent";
                     repo.save(order);
 
+                    console.log(order);
                     res.send(body);
                 });
             break;
         case "Paypal":
             var paypal = new money.Paypal();
             paypal.requestPayment(order)
-                .then((data)=>{
-                    var body = Object.assign({status: "success", type:"Paypal-Response"}, data);
+                .then((data) => {
+                    var body = Object.assign({status: "success", type: "Paypal-Response"}, data);
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
 
                     order.paymentData.push(body);
                     order.status = "request_sent";
                     repo.save(order);
 
+                    console.log(order);
                     res.send(body);
                 });
             break;
