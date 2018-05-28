@@ -2,16 +2,50 @@
  * Mpesa callbacks
  */
 
-const express = require('express'),
+const MongoRepo = require('../lib/common/MongoRepo'),
+    express = require('express'),
     router = express.Router(),
-    ejs = require('ejs'),
-    app = express();
+    ejs = require('ejs');
+
+var repo = new MongoRepo("drinks", "orders");
 
 // B2C/C2B ResultURL - /api/v1/result
 router.post('/result', function (req, res) {
     console.log('-----------B2C RESULTS------------');
     console.log(req.body);
-    console.log('-----------------------');
+    console.log('----------------------------------');
+
+    if(req.body && req.body.Body && req.body.Body.stkCallback){
+        var body = req.body.Body.stkCallback;
+        repo.findOne({"paymentData.MerchantRequestID": body.MerchantRequestID})
+            .then(data => {
+                if(data){
+                    data.paymentData = data.paymentData || [];
+
+                    body.createdAt = new Date().toISOString();
+                    data.status = (body.ResultDesc || data.status).split(" ")[1];
+                    data.paymentData.push(body);
+
+                    repo.save(data);
+                }else{
+                    console.log("Error while trying to read MerchantRequestID:" + body.MerchantRequestID);
+                }
+            });
+    }
+
+    /* {
+       "Body": {
+          "stkCallback": {
+             "MerchantRequestID": "22954-724188-1",
+             "CheckoutRequestID": "ws_CO_DMZ_34598621_28052018215209591",
+             "ResultCode": 1032,
+             "ResultDesc": "Request cancelled by user",
+             "_id": "4b6b07ac6f78789fcc7f40aaa2694b2d"
+          },
+          "_id": "0247da6e8f064238200b2c7791593599"
+       },
+       "_id": "8e6198cd5b5d85f24dd2d34fcf45da25"
+    }*/
 
     var message = {
         "ResponseCode": "00000000",

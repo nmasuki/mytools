@@ -93,6 +93,7 @@ app.post('/order', protectedBasic, function (req, res) {
                 .then((data) => {
                     var body = Object.assign({status: "success", type: "Mpesa-Response"}, data);
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
+                    body.createdAt = new Date().toISOString();
 
                     order.paymentData.push(body);
                     order.status = "request_sent";
@@ -108,6 +109,7 @@ app.post('/order', protectedBasic, function (req, res) {
                 .then((data) => {
                     var body = Object.assign({status: "success", type: "Paypal-Response"}, data);
                     body.CustomerMessage = paymentMethod.metaData.successMsg || body.CustomerMessage;
+                    body.createdAt = new Date().toISOString();
 
                     order.paymentData.push(body);
                     order.status = "request_sent";
@@ -133,6 +135,8 @@ app.post('/order', protectedBasic, function (req, res) {
     }
 
     order.orderType = paymentMethod.name;
+    order.createdAt = new Date().toISOString();
+
     repo.save(order);
 });
 
