@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a63dabc4-c85c-48ec-b35c-35fed4fe051d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/Debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbuser/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/cbuser/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbuser/routes/payment/mpesa.js" beforeDir="false" afterPath="$PROJECT_DIR$/cbuser/routes/payment/mpesa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AppSync.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AppSync.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/money/Mpesa.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/money/Mpesa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/money/Paypal.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/money/Paypal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/money/client/tsconfig.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,17 +25,17 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cbuser/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="-2002">
               <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mpesa.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mpesa.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cbuser/routes/payment/mpesa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="68">
+              <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
               <folding>
                 <element signature="e#514#760#0" />
               </folding>
@@ -92,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppSync.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppSync.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/AppSync.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+            <state relative-caret-position="144">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="e#1193#2187#0" />
               </folding>
@@ -181,7 +174,7 @@
       <find>stackTrace</find>
       <find>mongoose</find>
       <find>Promise</find>
-      <find />
+      <find>new Promise</find>
       <find>fs.</find>
       <find>md5</find>
       <find>$id</find>
@@ -284,8 +277,8 @@
         <option value="$PROJECT_DIR$/lib/common/polyfills.js" />
         <option value="$PROJECT_DIR$/cbuser/app.js" />
         <option value="$PROJECT_DIR$/lib/money/Mpesa.js" />
-        <option value="$PROJECT_DIR$/cbuser/routes/payment/mpesa.js" />
         <option value="$PROJECT_DIR$/lib/AppSync.js" />
+        <option value="$PROJECT_DIR$/cbuser/routes/payment/mpesa.js" />
       </list>
     </option>
   </component>
@@ -306,7 +299,7 @@
     </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-23" />
     <option name="y" value="-18" />
     <option name="width" value="1918" />
@@ -478,7 +471,7 @@
       <workItem from="1526482472576" duration="3819000" />
       <workItem from="1526573926811" duration="4585000" />
       <workItem from="1527018505418" duration="3494000" />
-      <workItem from="1527067057639" duration="19777000" />
+      <workItem from="1527067057639" duration="20535000" />
     </task>
     <task id="LOCAL-00001" summary="Few updates..&#10;added package.json">
       <created>1525458420010</created>
@@ -512,7 +505,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="836724000" />
+    <option name="totallyTimeSpent" value="837482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -943,13 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cbuser/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/money/Mpesa.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-229">
@@ -957,22 +943,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cbuser/routes/payment/mpesa.js">
+    <entry file="file://$PROJECT_DIR$/lib/AppSync.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="144">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
           <folding>
-            <element signature="e#514#760#0" />
+            <element signature="e#1193#2187#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/AppSync.js">
+    <entry file="file://$PROJECT_DIR$/cbuser/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="-2002">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cbuser/routes/payment/mpesa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
           <folding>
-            <element signature="e#1193#2187#0" />
+            <element signature="e#514#760#0" />
           </folding>
         </state>
       </provider>

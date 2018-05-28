@@ -2,7 +2,7 @@
  * Mpesa callbacks
  */
 
-const MongoRepo = require('../lib/common/MongoRepo'),
+const MongoRepo = require('../../../lib/common/MongoRepo'),
     express = require('express'),
     router = express.Router(),
     ejs = require('ejs');
