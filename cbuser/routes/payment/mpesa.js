@@ -15,19 +15,27 @@ router.post('/result', function (req, res) {
     console.log(req.body);
     console.log('----------------------------------');
 
-    if(req.body && req.body.Body && req.body.Body.stkCallback){
+    if (req.body && req.body.Body && req.body.Body.stkCallback) {
         var body = req.body.Body.stkCallback;
         repo.findOne({"paymentData.MerchantRequestID": body.MerchantRequestID})
             .then(data => {
-                if(data){
+                if (data) {
+                    console.log("Mpesa result: ", data);
+
                     data.paymentData = data.paymentData || [];
 
+                    var statusOpts = ["cancelled", "success", "failed", "ok"];
+                    var status = (body.ResultDesc || data.status).split(" ").filter(w => w && statusOpts.find(s => w.toLowerCase().startsWith(s)));
+
                     body.createdAt = new Date().toISOString();
-                    data.status = (body.ResultDesc || data.status).split(" ")[1];
+                    body.type = "Mpesa-Callback";
+                    body.status = status[0];
+
+                    data.status = status[0];
                     data.paymentData.push(body);
 
                     repo.save(data);
-                }else{
+                } else {
                     console.log("Error while trying to read MerchantRequestID:" + body.MerchantRequestID);
                 }
             });
