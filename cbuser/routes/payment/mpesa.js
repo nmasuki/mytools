@@ -20,7 +20,6 @@ router.post('/result', function (req, res) {
         repo.findOne({"paymentData.MerchantRequestID": body.MerchantRequestID})
             .then(data => {
                 if (data) {
-                    console.log("Mpesa result: ", data);
 
                     data.paymentData = data.paymentData || [];
 
@@ -31,6 +30,8 @@ router.post('/result', function (req, res) {
                     body.type = "Mpesa-Callback";
                     body.status = status[0];
 
+                    console.log("Mpesa result: ", body);
+                    
                     data.status = status[0];
                     data.paymentData.push(body);
 
