@@ -2,7 +2,8 @@
  * Mpesa callbacks
  */
 
-const MongoRepo = require('../../../lib/common/MongoRepo'),
+const MongoRepo = require('../../../lib/common/MongoRepo')
+    fcm = require("../../../lib/phone/FcmMessage"),
     express = require('express'),
     router = express.Router(),
     ejs = require('ejs');
@@ -17,20 +18,20 @@ router.post('/result', function (req, res) {
 
     if (req.body && req.body.Body && req.body.Body.stkCallback) {
         var body = req.body.Body.stkCallback;
+        fcm.sendMessage(req.query.regId, "MPESA Payment", body.ResultDesc);
+
         repo.findOne({"paymentData.MerchantRequestID": body.MerchantRequestID})
             .then(data => {
                 if (data) {
 
                     data.paymentData = data.paymentData || [];
 
-                    var statusOpts = ["cancelled", "success", "failed", "ok"];
+                    var statusOpts = ["cancelled", "failed", "accepted", "processing", "pending", "success", "processed", "ok"];
                     var status = (body.ResultDesc || data.status).split(" ").filter(w => w && statusOpts.find(s => w.toLowerCase().startsWith(s)));
 
                     body.createdAt = new Date().toISOString();
                     body.type = "Mpesa-Callback";
                     body.status = status[0];
-
-                    console.log("Mpesa result: ", body);
                     
                     data.status = status[0];
                     data.paymentData.push(body);
@@ -38,6 +39,7 @@ router.post('/result', function (req, res) {
                     repo.save(data);
                 } else {
                     console.log("Error while trying to read MerchantRequestID:" + body.MerchantRequestID);
+                    fcm.sendMessage(req.query.regId, "MPESA Payment", console.lastMsg);
                 }
             });
     }
