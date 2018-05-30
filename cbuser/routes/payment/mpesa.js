@@ -42,6 +42,9 @@ router.post('/result', function (req, res) {
                     fcm.sendMessage(req.query.regId, "MPESA Payment", console.lastMsg);
                 }
             });
+    }else{
+        console.log("Invalid/Unexpected body recieved from MPESA", req.body);
+        fcm.sendMessage(req.query.regId, "MPESA Payment", console.lastMsg);
     }
 
     /* {
