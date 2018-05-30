@@ -2,7 +2,7 @@
  * Mpesa callbacks
  */
 
-const MongoRepo = require('../../../lib/common/MongoRepo')
+const MongoRepo = require('../../../lib/common/MongoRepo'),
     fcm = require("../../../lib/phone/FcmMessage"),
     express = require('express'),
     router = express.Router(),
@@ -35,6 +35,8 @@ router.post('/result', function (req, res) {
                     
                     data.status = status[0];
                     data.paymentData.push(body);
+
+                    fcm.sendMessage(req.query.regId, "MPESA Payment", body.ResultDesc);
 
                     repo.save(data);
                 } else {

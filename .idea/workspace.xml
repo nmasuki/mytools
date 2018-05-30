@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a63dabc4-c85c-48ec-b35c-35fed4fe051d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/phone/FcmMessage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/Debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbuser/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/cbuser/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbuser/routes/payment/mpesa.js" beforeDir="false" afterPath="$PROJECT_DIR$/cbuser/routes/payment/mpesa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/money/Paypal.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/money/Paypal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/phone/Phonebook.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/phone/Phonebook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/phone/FcmMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/phone/FcmMessage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,20 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cbuser/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state>
+              <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mpesa.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mpesa.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cbuser/routes/payment/mpesa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#2194#2445#0" />
+                <element signature="e#2538#2829#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,11 +51,9 @@
       <file leaf-file-name="FcmMessage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/phone/FcmMessage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="152">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="n#!!block;n#constructor#0;n#FcmMessage#0" />
-                <element signature="n#!!block;n#sendMessage#0;n#FcmMessage#0" />
                 <element signature="e#260#571#0" />
               </folding>
             </state>
@@ -116,10 +116,10 @@
       <file leaf-file-name="polyfills.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/common/polyfills.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2737">
-              <caret line="161" column="38" selection-start-line="161" selection-start-column="38" selection-end-line="161" selection-end-column="38" />
+            <state relative-caret-position="141">
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="36" />
               <folding>
-                <marker date="1527536916764" expanded="true" signature="17983:17992" ph="{...}" />
+                <marker date="1527700976565" expanded="true" signature="18023:18032" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -137,7 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>detailed_errcodes`</find>
       <find>db</find>
       <find>Botsapp</find>
       <find>yourBot</find>
@@ -167,9 +166,9 @@
       <find>paymentData</find>
       <find>MongoRepo</find>
       <find>regId</find>
+      <find>req.query.regId</find>
     </findStrings>
     <replaceStrings>
-      <replace>pushbullet.profile</replace>
       <replace>pushbullet.access_token</replace>
       <replace>.any</replace>
       <replace>.any(</replace>
@@ -199,6 +198,7 @@
       <replace>lookupRepo</replace>
       <replace>_id</replace>
       <replace>._id</replace>
+      <replace>order.metaData.regId</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Tools\nodejs\mytools</dir>
@@ -253,14 +253,14 @@
         <option value="$PROJECT_DIR$/cbuser/routes/payment.js" />
         <option value="$PROJECT_DIR$/lib/money/client/PaypalClient.js" />
         <option value="$PROJECT_DIR$/lib/money/client/MPESAClient.js" />
-        <option value="$PROJECT_DIR$/lib/common/polyfills.js" />
-        <option value="$PROJECT_DIR$/cbuser/app.js" />
         <option value="$PROJECT_DIR$/lib/money/Mpesa.js" />
         <option value="$PROJECT_DIR$/lib/AppSync.js" />
         <option value="$PROJECT_DIR$/lib/phone/Phonebook.js" />
         <option value="$PROJECT_DIR$/lib/money/Paypal.js" />
+        <option value="$PROJECT_DIR$/lib/common/polyfills.js" />
         <option value="$PROJECT_DIR$/lib/phone/FcmMessage.js" />
         <option value="$PROJECT_DIR$/cbuser/routes/payment/mpesa.js" />
+        <option value="$PROJECT_DIR$/cbuser/app.js" />
       </list>
     </option>
   </component>
@@ -299,6 +299,11 @@
             <path>
               <item name="node" type="b2602c69:ProjectViewProjectNode" />
               <item name="node" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="cbuser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node" type="b2602c69:ProjectViewProjectNode" />
@@ -465,7 +470,7 @@
       <workItem from="1526573926811" duration="4585000" />
       <workItem from="1527018505418" duration="3494000" />
       <workItem from="1527067057639" duration="25475000" />
-      <workItem from="1527692605366" duration="2670000" />
+      <workItem from="1527692605366" duration="8696000" />
     </task>
     <task id="LOCAL-00001" summary="Few updates..&#10;added package.json">
       <created>1525458420010</created>
@@ -499,7 +504,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="845092000" />
+    <option name="totallyTimeSpent" value="851118000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -517,13 +522,13 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6926554" visible="true" weight="0.19875" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299435" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.245625" side_tool="true" visible="true" weight="0.3358302" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.181875" side_tool="true" visible="true" weight="0.4968789" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.48925886" weight="0.2625139" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" weight="0.3467742" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986979" weight="0.3467742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.31256714" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.754375" visible="true" weight="0.3358302" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.754375" weight="0.3358302" />
       <window_info id="Favorites" order="2" sideWeight="0.30734465" side_tool="true" weight="0.19387755" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.81966144" weight="0.44758064" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.818125" visible="true" weight="0.4968789" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -554,12 +559,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cbuser/app.js</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="1274" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cbuser/app.js</url>
-          <line>26</line>
+          <line>27</line>
           <option name="timeStamp" value="1276" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -569,7 +574,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cbuser/app.js</url>
-          <line>52</line>
+          <line>53</line>
           <option name="timeStamp" value="1379" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -609,7 +614,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/lib/common/polyfills.js</url>
-          <line>339</line>
+          <line>342</line>
           <option name="timeStamp" value="1414" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -617,17 +622,21 @@
           <line>90</line>
           <option name="timeStamp" value="1418" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/cbuser/routes/payment/mpesa.js</url>
-          <line>14</line>
-          <option name="timeStamp" value="1422" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1425" />
+      <option name="time" value="1434" />
     </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>this</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/money/index.js">
@@ -781,6 +790,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+          <folding>
+            <element signature="e#2779#2949#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -871,27 +883,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/polyfills.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="161" column="38" selection-start-line="161" selection-start-column="38" selection-end-line="161" selection-end-column="38" />
-          <folding>
-            <marker date="1527536916764" expanded="true" signature="17983:17992" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/AppSync.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cbuser/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -934,13 +929,21 @@
     <entry file="file://$PROJECT_DIR$/node_modules/fcm-node/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/polyfills.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="36" />
+          <folding>
+            <marker date="1527700976565" expanded="true" signature="18023:18032" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/phone/FcmMessage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="152">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="n#!!block;n#constructor#0;n#FcmMessage#0" />
-            <element signature="n#!!block;n#sendMessage#0;n#FcmMessage#0" />
             <element signature="e#260#571#0" />
           </folding>
         </state>
@@ -948,8 +951,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cbuser/routes/payment/mpesa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#2194#2445#0" />
+            <element signature="e#2538#2829#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cbuser/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>

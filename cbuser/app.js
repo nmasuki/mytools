@@ -1,4 +1,5 @@
 var express = require('express')
+    , fcm = require("../lib/phone/FcmMessage")
     , bodyParser = require('body-parser')
     , prettyjson = require('prettyjson');
 
@@ -80,11 +81,13 @@ app.post('/order', protectedBasic, function (req, res) {
 
     switch (paymentMethod.name) {
         case "Cash On Delivery":
+            var msg = paymentMethod.metaData.successMsg || "Thanks for placing your order. Your deliver will soon be dispatched"
             res.send({
                 status: 'success',
-                message: paymentMethod.metaData.successMsg || "Thanks for placing your order. Your deliver will soon be dispatched"
+                message: msg
             });
             order.status = "on_delivery";
+            fcm.sendMessage(order.metaData.regId, "Cash On Delivery", msg);
 
             break;
         case "M-Pesa":
@@ -99,7 +102,7 @@ app.post('/order', protectedBasic, function (req, res) {
                     order.status = "request_sent";
                     repo.save(order);
 
-                    console.log(order);
+                    fcm.sendMessage(order.metaData.regId, "MPESA Payment", body.ResponseDescription);
                     res.send(body);
                 });
             break;
@@ -115,7 +118,7 @@ app.post('/order', protectedBasic, function (req, res) {
                     order.status = "request_sent";
                     repo.save(order);
 
-                    console.log(order);
+                    fcm.sendMessage(order.metaData.regId, "Paypal Payment", body.ResponseDescription);
                     res.send(body);
                 });
             break;
