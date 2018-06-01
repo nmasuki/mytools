@@ -7,7 +7,7 @@ const MongoRepo = require('../../../lib/common/MongoRepo'),
     express = require('express'),
     router = express.Router(),
     ejs = require('ejs'),
-    config = require('config');
+    config = require('./config');
 
 var fcm = new FCM();
 var repo = new MongoRepo("drinks", "orders");
