@@ -6,38 +6,36 @@ const MongoRepo = require('../../../lib/common/MongoRepo'),
     FCM = require("../../../lib/phone/FcmMessage"),
     express = require('express'),
     router = express.Router(),
-    ejs = require('ejs');
+    ejs = require('ejs'),
+    config = require('config');
 
 var fcm = new FCM();
 var repo = new MongoRepo("drinks", "orders");
 
 // B2C/C2B ResultURL - /api/v1/result
 router.post('/result', function (req, res) {
+    var body = req.body && req.body.Body && req.body.Body.stkCallback || {};
+
     console.log('-----------B2C RESULTS------------');
-    console.log(req.body);
+    console.log(body.ResultDesc);
     console.log('----------------------------------');
 
-    if (req.body && req.body.Body && req.body.Body.stkCallback) {
-        var body = req.body.Body.stkCallback;
-        fcm.sendMessage(req.query.regId, "MPESA Payment", body.ResultDesc);
-
+    if (body) {
         repo.findOne({"paymentData.MerchantRequestID": body.MerchantRequestID})
             .then(data => {
                 if (data) {
 
-                    data.paymentData = data.paymentData || [];
-
-                    var statusOpts = ["cancelled", "failed", "accepted", "processing", "pending", "success", "processed", "ok"];
-                    var status = (body.ResultDesc || data.status).split(" ").filter(w => w && statusOpts.find(s => w.toLowerCase().startsWith(s)));
-
-                    body.createdAt = new Date().toISOString();
                     body.type = "Mpesa-Callback";
-                    body.status = status[0];
-                    
-                    data.status = status[0];
+                    body.createdAt = new Date().toISOString();
+                    body.status = body.ResultCode === 0 ? "success" : "failed";
+                    body.message = config.MpesaResultCode[body.ResultCode] || body.ResultDesc;
+
+                    data.status = body.status;
+                    data.paymentData = data.paymentData || [];
                     data.paymentData.push(body);
 
-                    fcm.sendMessage(req.query.regId, "MPESA Payment", body.ResultDesc);
+                    if (body.message)
+                        fcm.sendMessage(req.query.regId, "MPESA Payment", body.message);
 
                     repo.save(data);
                 } else {
@@ -45,8 +43,8 @@ router.post('/result', function (req, res) {
                     fcm.sendMessage(req.query.regId, "MPESA Payment", console.lastMsg);
                 }
             });
-    }else{
-        console.log("Invalid/Unexpected body recieved from MPESA", req.body);
+    } else {
+        console.log("Invalid/Unexpected body received from MPESA", req.body);
         fcm.sendMessage(req.query.regId, "MPESA Payment", console.lastMsg);
     }
 
