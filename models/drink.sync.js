@@ -121,7 +121,7 @@ sync.save = function save(_id, _rev, data, mathFn) {
         } else if (row) {
             var changes = `${_id}:\r\n`;
             for (var i in diff)
-                changes += `\t-${i}: ${diff[i][0]}->${diff[i][1]}\r\n`;
+                changes += `\t-${i}: ${diff[i][0]} -> ${diff[i][1]}\r\n`;
 
             console.log(changes);
         }
