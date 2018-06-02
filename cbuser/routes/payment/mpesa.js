@@ -2,8 +2,8 @@
  * Mpesa callbacks
  */
 
-const MongoRepo = require('../../../lib/common/MongoRepo'),
-    fcm = require("../lib/phone/FcmMessage").getInstance(),
+const fcm = require("../../../lib/phone/FcmMessage").getInstance(),
+    MongoRepo = require('../../../lib/common/MongoRepo'),
     config = require('./config'),
     express = require('express'),
     router = express.Router(),
