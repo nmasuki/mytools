@@ -1,11 +1,10 @@
 var express = require('express')
-    , fcm = require("../lib/phone/FcmMessage")
+    , fcm = require("../lib/phone/FcmMessage").getInstance()
     , bodyParser = require('body-parser')
     , prettyjson = require('prettyjson');
 
 
 var request = require('request').defaults({json: true})
-    , httpProxy = require('http-proxy')
     , host = "127.0.0.1:4985"
     , db = "dialadrink"
     , app = express();

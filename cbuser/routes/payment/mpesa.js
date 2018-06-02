@@ -3,13 +3,12 @@
  */
 
 const MongoRepo = require('../../../lib/common/MongoRepo'),
-    FCM = require("../../../lib/phone/FcmMessage"),
+    fcm = require("../lib/phone/FcmMessage").getInstance(),
+    config = require('./config'),
     express = require('express'),
     router = express.Router(),
-    ejs = require('ejs'),
-    config = require('./config');
+    ejs = require('ejs');
 
-var fcm = new FCM();
 var repo = new MongoRepo("drinks", "orders");
 
 // B2C/C2B ResultURL - /api/v1/result
