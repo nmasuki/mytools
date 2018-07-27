@@ -205,6 +205,9 @@ sync.fillIn = function fillIn(row, data) {
     if (row.categories && row.categories.length)
         data.category = row.categories.first(c => c && !c.startsWith("offer"));
 
+    if(data.description && data.description.any("\n"))
+        data.description = data.description.replace("\n", " ")
+
     data.options = (row.options || []).concat(data.options).filter(o => !!o)
         .orderByDescending(o => o && o.name)
         .distinctBy(o => parseFloat("0" + o && o.price));
@@ -225,21 +228,21 @@ sync.fillDescription = function fillDescription(_id, _data) {
 
     var hasDescription = false;//!!_data.description;
     if (!hasDescription) {
-        sync.googleSearch(name.trimRight('s') + ' is a', function (data, err) {
+        sync.googleSearch(name.trimRight('s') + ' is a drink *', function (data, err) {
             if (err) {
                 console.log(err);
                 return;
             }
 
             var items;
-            var exempts = ["£", "$", "click", "login", "dialadrink", "price", "buy", "pay", "deliver", "cart", "website", "site", "sale", "page", "under the age", "i have", "jumia", "shopping", "likes", "comment", "1, 2, 3"]
+            var exempts = ["KSh", "KES", "KSH", "£", "$", "click", "login", "dialadrink", "price", "buy", "pay", "deliver", "cart", "website", "site", "sale", "page", "under the age", "i have", "jumia", "shopping", "likes", "comment", "1, 2, 3"]
             if (data && data.webPages && data.webPages.value[0]) {
                 items = data.webPages.value.filter(function (i) {
                     return !!i.snippet && i.snippet.toLowerCase().contains(_data.name.toLowerCase());
                 });
-                _data.description = items[0].snippet.replace(regexPostDate, "").trim();
+                _data.description = items[0].snippet.replace(regexPostDate, "").replace("\n", " ").trim();
                 _data.altDescriptions = items.slice(1).map(function (v) {
-                    return v.snippet.replace(regexPostDate, "").trim();
+                    return v.snippet.replace(regexPostDate, "").replace("\n", " ").trim();
                 });
             }
 
@@ -248,10 +251,10 @@ sync.fillDescription = function fillDescription(_id, _data) {
                     return !!i.title;
                 });
                 if (items[0]) {
-                    var descriptions = []
-                    _data.description = items[0].text.replace(regexPostDate, "").trim();
+                    var descriptions = [];
+                    _data.description = items[0].text.replace(regexPostDate, "").replace("\n", " ").trim();
                     _data.altDescriptions = items.slice(1).map(function (v) {
-                        return v.text.replace(regexPostDate, "").trim();
+                        return v.text.replace(regexPostDate, "").replace("\n", " ").trim();
                     });
                 }
             }
@@ -262,9 +265,9 @@ sync.fillDescription = function fillDescription(_id, _data) {
                 }).filter(d => !d.snippet.split(/\W/).contains(w => w && exempts.contains(w.toLowerCase())));
 
                 if (items.length) {
-                    _data.description = items.first().htmlSnippet.replace(regexPostDate, "").trim();
+                    _data.description = items.first().htmlSnippet.replace(regexPostDate, "").replace("\n", " ").trim();
                     _data.altDescriptions = items.slice(1).map(function (v) {
-                        return v.htmlSnippet.replace(regexPostDate, "").trim();
+                        return v.htmlSnippet.replace(regexPostDate, "").replace("\n", " ").trim();
                     });
                 } else {
                     console.log("No matching search result..");
@@ -433,7 +436,6 @@ sync.googleSearch = function googleSearch(content, callback) {
 };
 
 sync.pruneMissing = function (drinks) {
-    //http://159.65.50.86:4985/dialadrink/_all_docs
     najax.get({
         url: `http://${host}:4985/${database}/_all_docs`,
         contentType: "application/json",
