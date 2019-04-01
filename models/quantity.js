@@ -7,4 +7,4 @@ var QuantitySchema= new mongoose.Schema({
 		parent :{ ref : 'Drink', type :mongoose.Schema.Types.ObjectId }
 })
 
-module.exports=mongoose.model('Quantity', QuantitySchema);
+module.exports = mongoose.model('Quantity', QuantitySchema);

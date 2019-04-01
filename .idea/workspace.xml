@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a63dabc4-c85c-48ec-b35c-35fed4fe051d" name="Default" comment="Updates.">
-      <change afterPath="$PROJECT_DIR$/geopolltopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbuser/routes/payment/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/cbuser/routes/payment/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/AppSync.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AppSync.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Crawler.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Crawler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Geopoll.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Geopoll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ProjectEular.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ProjectEular.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/polyfills.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/polyfills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/helpers/crawler_url_hundeler.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/helpers/crawler_url_handeler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/phone/PushBullet.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/phone/PushBullet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/drink.sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/drink.sync.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,18 +26,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="polyfills.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/common/polyfills.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4488">
-              <caret line="293" column="55" selection-start-line="293" selection-start-column="55" selection-end-line="293" selection-end-column="55" />
-              <folding>
-                <element signature="e#123#1292#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Geopoll.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Geopoll.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,25 +57,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HTTPClient.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/common/HTTPClient.js">
+      <file leaf-file-name="AppSync.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/AppSync.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="1190">
+              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drink.sync.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/drink.sync.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="276" column="66" selection-start-line="276" selection-start-column="53" selection-end-line="276" selection-end-column="66" />
               <folding>
-                <element signature="e#1504#2238#0" />
+                <element signature="e#1695#3995#0" />
+                <element signature="e#4049#7322#0" />
+                <element signature="e#15688#16167#0" />
+                <element signature="e#16216#16576#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppSync.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/AppSync.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cbuser/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            <state relative-caret-position="17">
+              <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
               <folding>
-                <element signature="e#665#3051#0" />
+                <element signature="n#!!block;n#authChecker#0" />
               </folding>
             </state>
           </provider>
@@ -105,20 +96,8 @@
       <file leaf-file-name="drink.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/drink.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drink.sync.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/drink.sync.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6205">
-              <caret line="437" selection-start-line="437" selection-end-line="437" />
-              <folding>
-                <element signature="e#4094#7317#0" />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="24" column="30" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -126,11 +105,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="148" selection-start-line="148" selection-end-line="148" />
-              <folding>
-                <element signature="e#3592#5499#0" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -138,15 +114,17 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding>
-                <element signature="e#246#414#0" />
-                <element signature="e#486#730#0" />
-                <element signature="e#800#896#0" />
-                <element signature="e#960#1356#0" />
-                <element signature="e#1575#2294#0" />
-              </folding>
+            <state relative-caret-position="833">
+              <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/money/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -163,9 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fs.</find>
-      <find>md5</find>
-      <find>$id</find>
       <find>_id</find>
       <find>[&quot;_id&quot;]</find>
       <find>findOne</find>
@@ -193,6 +168,9 @@
       <find>Handler</find>
       <find>Header</find>
       <find>.makeRequest</find>
+      <find>is not implemented!!</find>
+      <find>pruneMissing</find>
+      <find>googleSearch</find>
     </findStrings>
     <replaceStrings>
       <replace>${produrl}</replace>
@@ -256,7 +234,6 @@
         <option value="internal/process/next_tick.js" />
         <option value="$PROJECT_DIR$/createdialadrinkJSON.js" />
         <option value="$USER_HOME$/Desktop/js%2Feasydata.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="_http_agent.js" />
         <option value="$PROJECT_DIR$/lib/common/HTTPClient.js" />
         <option value="$PROJECT_DIR$/lib/DialADrinkAppSync.js" />
@@ -272,7 +249,6 @@
         <option value="$PROJECT_DIR$/lib/money/Mpesa.js" />
         <option value="$PROJECT_DIR$/lib/phone/Phonebook.js" />
         <option value="$PROJECT_DIR$/lib/money/Paypal.js" />
-        <option value="$PROJECT_DIR$/lib/index.js" />
         <option value="$PROJECT_DIR$/cbuser/routes/payment.js" />
         <option value="$PROJECT_DIR$/cbuser/routes/payment/configs.js" />
         <option value="$PROJECT_DIR$/lib/phone/FcmMessage.js" />
@@ -282,11 +258,13 @@
         <option value="$PROJECT_DIR$/lib/phone/PushBullet.js" />
         <option value="$PROJECT_DIR$/lib/ProjectEular.js" />
         <option value="$PROJECT_DIR$/lib/Crawler.js" />
-        <option value="$PROJECT_DIR$/models/drink.sync.js" />
         <option value="$PROJECT_DIR$/lib/common/polyfills.js" />
         <option value="$PROJECT_DIR$/lib/Geopoll.js" />
         <option value="$PROJECT_DIR$/lib/geopolltopup.js" />
         <option value="$PROJECT_DIR$/geopolltopup.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/lib/index.js" />
+        <option value="$PROJECT_DIR$/models/drink.sync.js" />
         <option value="$PROJECT_DIR$/lib/AppSync.js" />
       </list>
     </option>
@@ -309,16 +287,17 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="450" />
+    <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="960" />
-    <option name="height" value="1050" />
+    <option name="width" value="1939" />
+    <option name="height" value="1065" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,13 +308,22 @@
             <path>
               <item name="node" type="b2602c69:ProjectViewProjectNode" />
               <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="cbuser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -503,7 +491,12 @@
       <workItem from="1532266221828" duration="18905000" />
       <workItem from="1532548471659" duration="598000" />
       <workItem from="1532682934893" duration="608000" />
-      <workItem from="1532696641136" duration="625000" />
+      <workItem from="1532696641136" duration="12123000" />
+      <workItem from="1532940828328" duration="189000" />
+      <workItem from="1534080627141" duration="654000" />
+      <workItem from="1534262564834" duration="1642000" />
+      <workItem from="1534346194995" duration="1964000" />
+      <workItem from="1534422580768" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="Few updates..&#10;added package.json">
       <created>1525458420010</created>
@@ -537,7 +530,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="954285000" />
+    <option name="totallyTimeSpent" value="970369000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -550,18 +543,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="851" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.574359" visible="true" weight="0.16920027" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.10839392" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.2524785" side_tool="true" weight="0.517337" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.48843357" weight="0.517337" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.69398546" visible="true" weight="0.4590846" />
-      <window_info id="Structure" order="1" sideWeight="0.42564103" side_tool="true" visible="true" weight="0.16920027" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.74752146" weight="0.30929264" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.69398546" weight="0.4590846" />
+      <window_info id="Structure" order="1" sideWeight="0.5048544" side_tool="true" visible="true" weight="0.10839392" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.74752146" weight="0.41747573" />
       <window_info id="Favorites" order="2" sideWeight="0.30734465" side_tool="true" weight="0.19387755" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6926636" weight="0.47988904" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6926636" weight="0.66019416" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -574,24 +566,24 @@
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49674478" weight="0.38575268" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986979" weight="0.3467742" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6926554" visible="true" weight="0.20703125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.31256714" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299435" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.48925886" weight="0.2625139" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49674478" weight="0.38575268" />
       <window_info anchor="bottom" id="REST Client" order="11" weight="0.34593993" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.81184894" visible="true" weight="0.51478493" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7519531" weight="0.3360215" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.18815105" side_tool="true" visible="true" weight="0.51478493" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.48925886" weight="0.2625139" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49674478" weight="0.38575268" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32992035" />
       <window_info id="Favorites" order="2" sideWeight="0.30734465" side_tool="true" weight="0.19387755" />
     </layout-to-restore>
@@ -729,11 +721,6 @@
           <option name="timeStamp" value="1522" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.js</url>
-          <line>108</line>
-          <option name="timeStamp" value="1530" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/lib/Geopoll.js</url>
           <line>31</line>
           <option name="timeStamp" value="1531" />
@@ -748,11 +735,36 @@
           <line>19</line>
           <option name="timeStamp" value="1533" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.js</url>
+          <line>109</line>
+          <option name="timeStamp" value="1534" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lib/helpers/crawler_url_handeler.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="1535" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="1551" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/models/drink.sync.js</url>
+          <line>461</line>
+          <option name="timeStamp" value="1563" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lib/AppSync.js</url>
+          <line>70</line>
+          <option name="timeStamp" value="1565" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1534" />
+      <option name="time" value="1578" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -822,6 +834,21 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>Object.keys(libFiles)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Object.keys(libs)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>libFiles</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>this</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -829,13 +856,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mpesadata.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mpesa.js" />
     <entry file="file://$PROJECT_DIR$/lib/helpers/pushbullet_msghandler.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -948,13 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-867">
           <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cbuser/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1107,48 +1120,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/helpers/crawler_url_handeler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="e#1831#3930#0" />
-            <element signature="e#2288#3493#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="148" selection-start-line="148" selection-end-line="148" />
-          <folding>
-            <element signature="e#3592#5499#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <element signature="e#246#414#0" />
-            <element signature="e#486#730#0" />
-            <element signature="e#800#896#0" />
-            <element signature="e#960#1356#0" />
-            <element signature="e#1575#2294#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/polyfills.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4488">
           <caret line="293" column="55" selection-start-line="293" selection-start-column="55" selection-end-line="293" selection-end-column="55" />
-          <folding>
-            <element signature="e#123#1292#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1156,9 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="e#1504#2238#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,29 +1148,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/drink.model.js">
+    <entry file="file://$PROJECT_DIR$/lib/helpers/crawler_url_handeler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#1831#3930#0" />
+            <element signature="e#2288#3493#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/drink.sync.js">
+    <entry file="file://$PROJECT_DIR$/lib/money/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6205">
-          <caret line="437" selection-start-line="437" selection-end-line="437" />
-          <folding>
-            <element signature="e#4094#7317#0" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/AppSync.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        <state relative-caret-position="1190">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cbuser/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
           <folding>
-            <element signature="e#665#3051#0" />
+            <element signature="n#!!block;n#authChecker#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/drink.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/drink.sync.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="276" column="66" selection-start-line="276" selection-start-column="53" selection-end-line="276" selection-end-column="66" />
+          <folding>
+            <element signature="e#1695#3995#0" />
+            <element signature="e#4049#7322#0" />
+            <element signature="e#15688#16167#0" />
+            <element signature="e#16216#16576#0" />
           </folding>
         </state>
       </provider>

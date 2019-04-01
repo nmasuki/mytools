@@ -43,10 +43,10 @@ function getArguments(line, index) {
                 if (['a', 'action'].contains(key))
                     _actionName = value;
                 else if (['l', 'lib'].contains(key))
-                    _libName = Object.keys(libs).find(l => l.toLowerCase().trim() == value.toLowerCase().trim()) || value;
+                    _libName = Object.keys(libs).find(l => l.toLowerCase().trim() === value.toLowerCase().trim()) || value;
                 else {
-                    if (typeof args[0] != "object")
-                        args.unshift({})
+                    if (typeof args[0] !== "object")
+                        args.unshift({});
                     args[0][key] = value;
                 }
 

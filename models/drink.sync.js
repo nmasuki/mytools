@@ -110,7 +110,7 @@ sync.get = function get(_id, callback) {
 
 sync.save = function save(_id, _rev, data, mathFn) {
     sync.get(_id, function (err, row, cas) {
-        if(typeof mathFn == "function" && !mathFn(row))
+        if (typeof mathFn == "function" && !mathFn(row))
             return;
 
         var diff = Object.diff(row, data) || {};
@@ -194,10 +194,10 @@ sync.fillIn = function fillIn(row, data) {
     row = row || {};
 
     if (row.category == "offer")
-        data.category = data.category;
+        data.category = undefined;
 
     if (row.subcategory == "offer")
-        data.subcategory = data.subcategory;
+        data.subcategory = undefined;
 
     if (row.subcategory && row.subcategory.toLowerCase() == "image")
         data.subcategory = undefined;
@@ -205,7 +205,7 @@ sync.fillIn = function fillIn(row, data) {
     if (row.categories && row.categories.length)
         data.category = row.categories.first(c => c && !c.startsWith("offer"));
 
-    if(data.description && data.description.any("\n"))
+    if (data.description && data.description.any("\n"))
         data.description = data.description.replace("\n", " ")
 
     data.options = (row.options || []).concat(data.options).filter(o => !!o)
@@ -223,7 +223,7 @@ sync.fillDescription = function fillDescription(_id, _data) {
 
     if (!cat.startsWith("offer") && !name.toLowerCase().contains(cat.toLowerCase()))
         name += ` ${cat}`;
-    if(_data.subcategory)
+    if (_data.subcategory)
         name += ` ${_data.subcategory}`;
 
     var hasDescription = false;//!!_data.description;
@@ -435,7 +435,7 @@ sync.googleSearch = function googleSearch(content, callback) {
     });
 };
 
-sync.pruneMissing = function (drinks) {
+sync.pruneMissing = function (drinks, callback) {
     najax.get({
         url: `http://${host}:4985/${database}/_all_docs`,
         contentType: "application/json",
@@ -452,11 +452,14 @@ sync.pruneMissing = function (drinks) {
             "User-Agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
         },
         success: function (data) {
-            data.rows.forEach(row => {
+            var matches = data.rows.filter(row => {
                 var found = drinks.find(d => d._id == row.id);
                 if (!found)
-                    sync.save(row.id, row.value.rev, {_id: row.id, _deleted: true}, r => r.type == "Product")
+                    sync.save(row.id, row.value.rev, {_id: row.id, _deleted: true}, r => r.type === "Product");
+                return !!found;
             });
+
+            callback(drinks);
         },
         error: function (xhr, status, err) {
             var msg = xhr.responseText || err.message;
