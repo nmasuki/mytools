@@ -22,7 +22,7 @@ var processQueeue = Async.queue(function (task, callback) {
 
 console.log('setup interval');
 var processRunId = setInterval(function(){
-	console.log('waiting....'+ 'items left', processQueeue.length())
+	console.log('waiting....  items left', processQueeue.length())
 },3000)
 
 processQueeue.drain = function() {
@@ -82,7 +82,7 @@ connection.query('select p.id, p.pollid,pi.value as email,p.`action`  from  geop
 
 
 // process poll
-function processPoll(task,doneCallback){
+function processPoll(task, doneCallback){
 	console.log(task.pollid+' processing.. id:'+task.id);
 
   var options = {
@@ -114,7 +114,7 @@ function processPoll(task,doneCallback){
 
     }).on('error', (e) => {
       console.error(e);
-      console.log('on error calling callback')
+      console.log('on error calling callback');
       doneCallback();
     });
   })(task);
