@@ -8,8 +8,9 @@
         {
             "type": "node",
             "request": "launch",
+            "args": ["-s", "-lib", "regexmaker" , "etlregex"],
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\kpi_dashboards.js"
+            "program": "${workspaceFolder}/index.js"
         }
     ]
 }
