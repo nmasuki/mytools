@@ -22,7 +22,7 @@
     "express": "^4.16.3",
     "fcm-node": "^1.5.1",
     "gravatar": "^1.6.0",
-    "http-proxy": "^1.17.0",
+    "http-proxy": "^1.18.1",
     "https": "^1.0.0",
     "jslinq": "^1.0.21",
     "json2csv": "^4.5.1",
